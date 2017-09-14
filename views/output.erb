@@ -1,0 +1,26 @@
+<h1>HANGMAN</h1>
+<h2>
+  <% @game_word.each do |letter| %>
+  <%= letter + " " %>
+  <% end %>
+</h2>
+<h2 id = "box">
+  <% @box.each do |letter| %>
+  <%= letter + " , " %>
+  <% end %>
+</h2>
+<h2>
+<% @man.each do |part| %>
+<%= part %>
+<%end%>
+</h2>
+<h2><%=@result%></h2>
+
+
+<form action="/output" method="post">
+  <div class="form-group">
+    <label for=single>Guess a letter!</label>
+    <input id="single" name="single" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn btn-success">Make my guess!</button>
+</form>
